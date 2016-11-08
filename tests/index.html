@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>TK testing envelope</title>
+        <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.23.1.css">
+    </head>
+    <body>
+        <script>
+            console.log('Page loaded! Starting scripts...');
+            var meta = document.createElement('meta');
+            meta.name = "platypus-server";
+            meta.content = location.origin + '/' + location.pathname.split('/')[1];
+            document.getElementsByTagName('head')[0].appendChild(meta);
+            console.log('Finished!');
+//            if(!users){
+//                var users = {
+//                    anonymus: {
+//                        username: null,
+//                        password: null,
+//                        tests: []
+//                    },
+//                    sales: {
+//                        username: "gen",
+//                        password: "gen",
+//                        tests: []
+//                    },
+//                    manager: {
+//                        username:  'fran',
+//                        password:  'fran',
+//                        tests: []
+//                    }
+//                }
+//            };
+        </script>
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+        <script src="https://code.jquery.com/qunit/qunit-1.23.1.js"></script>
+        <script src="jquery.min.js"></script>
+        <script src="initializer.js"></script>
+        <script src="request.js"></script>
+        <script src="../app/metrika-test.js"></script>
+        <!--<script src="../app/metrika-websocket-test.js"></script>-->
+        
+        <script type="text/javascript" src="../web/pwc/pwc.nocache.js" source-path="../app"
+        entry-point="../tests/TestRunner"></script>
+    </body>
+</html>

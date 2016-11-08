@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <context-param>
+    <param-name>default-datasource</param-name>
+    <param-value>TK_OFFICE</param-value>
+  </context-param>
+  <context-param>
+    <param-name>appelement</param-name>
+    <param-value>start.js</param-value>
+  </context-param>
+  <context-param>
+    <param-name>source-path</param-name>
+    <param-value>app</param-value>
+  </context-param>
+  <listener>
+    <listener-class>com.eas.server.httpservlet.PlatypusSessionsSynchronizer</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>PlatypusServlet</servlet-name>
+    <servlet-class>com.eas.server.httpservlet.PlatypusHttpServlet</servlet-class>
+    <async-supported>true</async-supported>
+    <multipart-config>
+      <location>D:/repos/metrika/pub</location>
+      <max-file-size>2097152</max-file-size>
+      <max-request-size>2165824</max-request-size>
+      <file-size-threshold>1048576</file-size-threshold>
+    </multipart-config>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PlatypusServlet</servlet-name>
+    <url-pattern>/application/*</url-pattern>
+  </servlet-mapping>
+  <resource-ref>
+    <description>jdbc:h2:tcp://localhost/~/test_db [sa на PUBLIC]</description>
+    <res-ref-name>test_db</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>jdbc:postgresql://192.168.10.205:5432/Trans [trans на trans3]</description>
+    <res-ref-name>trans</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>jdbc:postgresql://192.168.10.89:5432/transcard_db [transcard на transcard]</description>
+    <res-ref-name>TK_OFFICE</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>jdbc:postgresql://78.24.222.87:5432/POS [cafeErp на cafeerp]</description>
+    <res-ref-name>4RPOS_P5_PROD</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>jdbc:postgresql://89.179.68.48:5432/sporttime [remotedev на public]</description>
+    <res-ref-name>sporttracker</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>jdbc:postgresql://party-ples.ru:5432/cafeErpDevP5 [remotedev на cafeerp]</description>
+    <res-ref-name>cafeErpDevP5</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>jdbc:postgresql://party-ples.ru:5432/erpBilling [remotedev на public]</description>
+    <res-ref-name>erpBilling</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>jdbc:postgresql://party-ples.ru:5432/cms_dev [remotedev на public]</description>
+    <res-ref-name>cms</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>jdbc:postgresql://4rp.org:5432/tk [remotedev на public]</description>
+    <res-ref-name>tk_dev</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>jdbc:postgresql://party-ples.ru:5432/tk [remotedev на public]</description>
+    <res-ref-name>TK_DEV_TEST</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <welcome-file-list>
+    <welcome-file>application-start.html</welcome-file>
+  </welcome-file-list>
+</web-app>

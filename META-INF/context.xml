@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><Context path="/metrika">
+  <Realm className="org.apache.catalina.realm.DataSourceRealm" dataSourceName="TK_OFFICE" digest="MD5" localDataSource="true" roleNameCol="GROUP_NAME" userCredCol="USR_PASSWD" userNameCol="USR_NAME" userRoleTable="MTD_GROUPS" userTable="MTD_USERS"/>
+  <Resource driverClassName="org.h2.Driver" name="test_db" password="" schema="PUBLIC" type="javax.sql.DataSource" url="jdbc:h2:tcp://localhost/~/test_db" username="sa"/>
+  <Resource driverClassName="org.postgresql.Driver" name="trans" password="trans" schema="trans3" type="javax.sql.DataSource" url="jdbc:postgresql://192.168.10.205:5432/Trans" username="trans"/>
+  <Resource driverClassName="org.postgresql.Driver" name="TK_OFFICE" password="ptranscard" schema="transcard" type="javax.sql.DataSource" url="jdbc:postgresql://192.168.10.89:5432/transcard_db" username="transcard"/>
+  <Resource driverClassName="org.postgresql.Driver" name="4RPOS_P5_PROD" password="cafeErp" schema="cafeerp" type="javax.sql.DataSource" url="jdbc:postgresql://78.24.222.87:5432/POS" username="cafeErp"/>
+  <Resource driverClassName="org.postgresql.Driver" name="sporttracker" password="Rem000Dev" schema="public" type="javax.sql.DataSource" url="jdbc:postgresql://89.179.68.48:5432/sporttime" username="remotedev"/>
+  <Resource driverClassName="org.postgresql.Driver" name="cafeErpDevP5" password="Rem000Dev" schema="cafeerp" type="javax.sql.DataSource" url="jdbc:postgresql://party-ples.ru:5432/cafeErpDevP5" username="remotedev"/>
+  <Resource driverClassName="org.postgresql.Driver" name="erpBilling" password="Rem000Dev" schema="public" type="javax.sql.DataSource" url="jdbc:postgresql://party-ples.ru:5432/erpBilling" username="remotedev"/>
+  <Resource driverClassName="org.postgresql.Driver" name="cms" password="Rem000Dev" schema="public" type="javax.sql.DataSource" url="jdbc:postgresql://party-ples.ru:5432/cms_dev" username="remotedev"/>
+  <Resource driverClassName="org.postgresql.Driver" name="tk_dev" password="Rem000Dev" schema="public" type="javax.sql.DataSource" url="jdbc:postgresql://4rp.org:5432/tk" username="remotedev"/>
+  <Resource driverClassName="org.postgresql.Driver" name="TK_DEV_TEST" password="Rem000Dev" schema="public" type="javax.sql.DataSource" url="jdbc:postgresql://party-ples.ru:5432/tk" username="remotedev"/>
+</Context>
