@@ -20,12 +20,14 @@
             console.log('Page loaded! Starting scripts...');
             var meta = document.createElement('meta');
             meta.name = "platypus-server";
-            meta.content = location.origin + '/' + location.pathname.split('/')[1];
+            var appContext = location.pathname.split('/')[1];
+            meta.content = location.origin + '/' + appContext;
             document.getElementsByTagName('head')[0].appendChild(meta);
             console.log('Finished!');
         </script>
 
         <script src="jquery.min.js"></script>
+        <script src="request.js"></script>
         <script src="initializer.js"></script>
         <script src="canvasjs.min.js"></script>
         

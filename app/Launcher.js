@@ -12,12 +12,9 @@ define('Launcher', ['orm', 'forms', 'ui'], function (Orm, Forms, Ui, ModuleName)
             form.show();
         };
         
-        // TODO : place your code here
-        
-        model.requery(function () {
-            // TODO : place your code here
-        });
-        
+        form.button.onActionPerformed = function(evt) {
+            model.qShotsInPeriod.query({period_start: new Date(), period_end: new Date()})
+        }        
     }
     return module_constructor;
 });

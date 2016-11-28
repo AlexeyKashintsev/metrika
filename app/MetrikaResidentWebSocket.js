@@ -4,7 +4,7 @@
  * @resident
  * @public
  */
-define('MetrikaResident', ['orm', 'logger'], function (Orm, Logger, ModuleName) {
+define('MetrikaResidentWebSocket', ['orm', 'logger'], function (Orm, Logger, ModuleName) {
     function module_constructor() {
         var self = this, model = Orm.loadModel(ModuleName);
 
@@ -14,7 +14,7 @@ define('MetrikaResident', ['orm', 'logger'], function (Orm, Logger, ModuleName) 
         self.add = function (aSessionId, aOnMessage) {
             sessions[aSessionId] = {};
             sessions[aSessionId].process = aOnMessage;
-//            aOnMessage('registered');// send 'registered' status
+            aOnMessage('registered');// send 'registered' status
             Logger.info('add ' + aSessionId + '. sessions count: ' + Object.keys(sessions).length);
             aOnMessage('opened');
         };

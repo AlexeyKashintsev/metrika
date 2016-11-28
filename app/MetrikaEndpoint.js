@@ -4,7 +4,7 @@
  */
 define('MetrikaEndpoint', ['rpc', 'logger'], function (Lpc, Logger) {
     function mc() {
-        var metrika = new Lpc.Proxy('MetrikaResident');
+        var metrika = new Lpc.Proxy('MetrikaResidentWebSocket');
         var id;
         this.onopen = function (session) {
             id = session.id;

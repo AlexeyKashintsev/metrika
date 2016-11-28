@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="period_start" nullable="true" parameterMode="1" selectionForm="null" type="Date"/>
+    <parameter description="" name="period_end" nullable="true" parameterMode="1" selectionForm="null" type="Date"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="147861350079700" entityLocationX="231" entityLocationY="18" entityWidth="150" tableAlias="t1" tableName="mtk_shots" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="period_start" rightEntityFieldName="shot_time" rightEntityId="147861350079700"/>
+  <relation leftEntityId="-1" leftEntityParameterName="period_end" rightEntityFieldName="shot_time" rightEntityId="147861350079700"/>
+</datamodel>

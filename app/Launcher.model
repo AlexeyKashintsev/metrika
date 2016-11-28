@@ -1,3 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<datamodel>
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <entity Name="qShotsInPeriod" Title="" entityHeight="200" entityIconified="false" entityId="147861688469800" entityLocationX="61" entityLocationY="60" entityWidth="150" queryId="qShotsInPeriod" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="con_shot" leftEntityId="147861688469800" rightEntityFieldName="mtk_shots_id" rightEntityId="147861688469800"/>
 </datamodel>

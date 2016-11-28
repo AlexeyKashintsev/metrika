@@ -5,14 +5,14 @@ tests.push({
     name: 'MetrikaTests',
     description: 'Метрика - нагрузочное тестирование',
     roles: ['anonymus'],
-    repeats: 1,
+    repeats: 10,
     priority: 1,
     test:
         function (assert, userData, finish, crash) {
             var moduleName = "MetrikaTestModule";
             var module;
             var labelIdToTest = '0';
-            var innerCount = 10;
+            var innerCount = 1000;
             
             return getProxy(moduleName, assert)
                 .then(function (aModule) {

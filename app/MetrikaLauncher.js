@@ -8,7 +8,8 @@ define('MetrikaLauncher', ['orm', 'rpc'], function (Orm, Lpc, ModuleName) {
     function launch(aMetrikaId, aMessage, aTime, aSuccess, aFailure) {
         var model = Orm.loadModel(ModuleName);
 
-        var metrika = new Lpc.Proxy('MetrikaResident');
+        var useWebSocket = false;
+        var metrika = new Lpc.Proxy('MetrikaResidentWebSocket');
         var metrikaID = aMetrikaId;
         model.qMtkShot.push({
             mtk_label: metrikaID,
@@ -25,7 +26,8 @@ define('MetrikaLauncher', ['orm', 'rpc'], function (Orm, Lpc, ModuleName) {
                 saving = true;
                 model.save(function() {
                     saving = false;
-                    metrika.shot(metrikaID);
+                    if (useWebSocket)
+                        metrika.shot(metrikaID);
                     success(model.qMtkShot.cursor.mtk_shots_id);
                 }, function() {
                     saving = false;
